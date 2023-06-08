@@ -1,1 +1,82 @@
-<p>signup works!</p>
+<div
+  class="container-fluid d-flex align-items-center justify-content-center vh-100 login-container"
+>
+  <div class="card h-50">
+    <div class="card-body">
+      <h1 class="card-title text-center mb-4">Signup</h1>
+      <form [formGroup]="signupForm" (ngSubmit)="signUpWithEmailAndPassword()">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            [(ngModel)]="email"
+            class="form-control"
+            formControlName="email"
+            [ngClass]="{
+              'is-invalid': submitted && signupForm.controls['email'].errors
+            }"
+          />
+          <div
+            *ngIf="submitted && signupForm.controls['email'].errors"
+            class="text-danger"
+          >
+            <div
+              *ngIf="
+                submitted && signupForm.controls['email'].errors['required']
+              "
+            >
+              Email is required!
+            </div>
+            <div
+              *ngIf="submitted && signupForm.controls['email'].errors['email']"
+            >
+              Please enter a valid email address!
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            class="form-control"
+            formControlName="password"
+            [ngClass]="{
+              'is-invalid': submitted && signupForm.controls['password'].errors
+            }"
+          />
+          <div
+            *ngIf="submitted && signupForm.controls['password'].errors"
+            class="text-danger"
+          >
+            <div
+              *ngIf="
+                submitted && signupForm.controls['password'].errors['required']
+              "
+            >
+              Password is required!
+            </div>
+            <div
+              *ngIf="
+                submitted && signupForm.controls['password'].errors['minlength']
+              "
+            >
+              Password should have at least 6 characters!
+            </div>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary btn-block my-4"
+          [disabled]="signupForm.invalid"
+        >
+          Signup
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

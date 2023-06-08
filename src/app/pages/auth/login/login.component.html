@@ -69,11 +69,18 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-block my-4">
+        <button
+          type="submit"
+          class="btn btn-primary btn-block my-4"
+          [disabled]="loginForm.invalid"
+        >
           Login
         </button>
       </form>
-      <p class="text-center">Don't have an account? <a href="#">Sign up</a></p>
+      <p class="text-center">
+        Don't have an account?
+        <button class="btn btn-link" (click)="signUp()">Sign up</button>
+      </p>
       <button class="btn btn-danger" (click)="signInWithGoogle()">
         Sign in with Google
       </button>

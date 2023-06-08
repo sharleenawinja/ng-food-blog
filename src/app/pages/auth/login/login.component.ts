@@ -44,6 +44,10 @@ export class LoginComponent implements OnInit {
       });
   }
 
+  signUp() {
+    this.router.navigateByUrl('signup');
+  }
+
   signInWithGoogle() {
     this.authservice
       .signInWithGoogle()
