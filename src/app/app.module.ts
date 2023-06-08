@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { SignupComponent } from './pages/auth/signup/signup.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
