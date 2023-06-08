@@ -15,7 +15,6 @@
             class="form-control"
             required
           />
-          <div class="invalid-feedback">Please enter your username.</div>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
@@ -27,12 +26,15 @@
             class="form-control"
             required
           />
-          <div class="invalid-feedback">Please enter your password.</div>
         </div>
         <button type="submit" class="btn btn-primary btn-block my-4">
           Login
         </button>
       </form>
+      <p class="text-center">Don't have an account? <a href="#">Sign up</a></p>
+      <button class="btn btn-danger" (click)="signInWithGoogle()">
+        Sign in with Google
+      </button>
     </div>
   </div>
 </div>
